@@ -5,10 +5,12 @@
 //snack4();
 //snack5();
 //snack6();
-snack7();
+//snack7();
 //snack8();
-//snack9();
+snack9();
 //snack10();
+//snack11();
+//snack12();
 
 // L’utente inserisce duenumeri in successione, Il software stampa il maggiore.
 void snack1()
@@ -106,6 +108,7 @@ void snack6()
     var text = (Array.IndexOf(guests, name) != -1 ? "Benvenuto, può entrare" : "Non posso farla entrare, non è in lista. Mi spiace");
 
     Console.WriteLine(text);
+
 }
 
 //Crea un array vuoto. Chiedi per 6 volte all'utente di inserire un numero, se è dispari inseriscilo nell'array
@@ -154,7 +157,18 @@ void snack8()
 
 void snack9()
 {
-    
+    int[] numbers = new int[50];
+    int sum = 0;
+    int i = 0;
+    while (sum < 50)
+    {
+        Console.WriteLine("Dammi un numero?");
+        int num = Convert.ToInt32(Console.ReadLine());
+        numbers[i] = num;
+        sum += num;
+        i += sum;
+        Console.WriteLine(sum);
+    }
 }
 
 //Fai inserire un numero,che chiameremo N,all’utente. Genera N array,ognuno formato da 10 numeri casuali tra 1 e 100.
@@ -181,5 +195,52 @@ void snack10()
         }
 
         Console.WriteLine();
+    }
+}
+
+// Dare la possibilità di inserire due parole. Verificare tramite una funzione che le due parole abbiano la stessa lunghezza.Se hanno la stessa lunghezza,stamparle entrambe, altrimenti stampare la più lunga delle due.
+
+void snack11()
+{
+    Console.WriteLine("Scrivi una parola:");
+    string word1 = Console.ReadLine() ?? "";
+    Console.WriteLine("scrivine un'altra:");
+    string word2 = Console.ReadLine() ?? "";
+    wordLenght(word1, word2);
+
+    void wordLenght(string word1, string word2)
+    {
+        if (word1.Length == word2.Length)
+        {
+            Console.WriteLine(word1 + word2);
+        }
+        else if (word1.Length > word2.Length)
+        {
+            Console.WriteLine(word1);
+        }
+        else
+        {
+            Console.WriteLine(word2);
+        }
+    }
+}
+
+    //Scrivere una funzione per verificare se un numero è pari o dispari. Quindi chiedere un numero all'utente e comunicargli se è pari o dispari.
+
+    void snack12()
+{
+    Console.WriteLine("Inserisci un numero");
+    int num = Convert.ToInt32(Console.ReadLine());
+    checkNum(num);
+    void checkNum(int num)
+    {
+        if (num % 2 == 0)
+        {
+            Console.WriteLine("Il numero è pari");
+        }
+        else
+        {
+            Console.WriteLine("Il numero è dispari");
+        }
     }
 }
